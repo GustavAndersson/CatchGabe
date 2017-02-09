@@ -26,6 +26,9 @@ public class HighscoreController : MonoBehaviour {
     public Text nameNine;
     public Text nameTen;
 
+    //I denna klass skickas all lagrad data som finns i PlayerPrefs, till de utritade textfälten
+    //som ska visa highscorelistan. 
+
     void Start()
     {
         UpdateHScore();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyGabe : MonoBehaviour {
     
-    //Funktion som förstör objektet när den kolliderar med triggern
+    //Metod som förstör fallande objekt när dem kolliderar med triggern
     void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(other.gameObject);

@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    //Metod som är kopplad till restart-knappen. Laddar om Main-scenen.
+    //Startar ett nytt spel genom att öppna main-scenen
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
     }
 
+    //Byter scen och visar highscore-listan
     public void showHighscore()
     {
         SceneManager.LoadScene("Highscore");
+    }
+
+    //Byter tillbaka till menyn
+    public void backToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

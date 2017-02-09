@@ -7,6 +7,8 @@ public class BinController : MonoBehaviour {
 
     private float maxWidth;
 
+    //Klass för spelobjektet. Räknar ut så att man inte kan styra spelobjektet utanför spelplanen
+    //Fixar även så att man styr med sin datormus
 	void Start () {
 		if(cam == null)
         {
@@ -18,7 +20,6 @@ public class BinController : MonoBehaviour {
         maxWidth = targetWidth.x - binWidth;
 	}
 	
-    //Gör så att man inte kan dra objektet utanför spelplanen
 	void Update () {
         Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 targetPosition = new Vector3(rawPosition.x, 0.0f, 0.0f);

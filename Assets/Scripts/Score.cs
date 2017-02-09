@@ -25,6 +25,7 @@ public class Score : MonoBehaviour {
         UpdateScore();
     }
 
+    //Om fienden rör soptunnan blir det minuspoäng, därefter uppdateras score. 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "DogEnemy")
@@ -40,7 +41,7 @@ public class Score : MonoBehaviour {
         scoreText.text = "Score\n" + score;
     }
     
-    //Kollar igenom om poängen platsar i topplistan
+    //Kollar igenom om poängen platsar i topplistan och lagrar isåfall i PlayerPrefs.
     public void AddScore(int score, string name)
     {
         Debug.Log(playername);
@@ -75,6 +76,7 @@ public class Score : MonoBehaviour {
         }
     }  
 
+    //Metod som tar emot namnet som skrivs in i input field.
     public void getNameInput(string name)
     {
         playername = name;

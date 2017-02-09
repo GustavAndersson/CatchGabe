@@ -16,8 +16,10 @@ public class GameController : MonoBehaviour {
     public GameObject nameInput;
 
     private float maxWidth;
-
-    // Use this for initialization
+    
+    //Vid start räknas spelytan ut så att de fallande objekten ramlar innanför spelplanen.
+    //Spawn metoden kallas så att fallande objekt börjar spawna
+    //UpdateText() kallas för att visa starttiden
     void Start()
     {
         if (cam == null)
@@ -32,6 +34,9 @@ public class GameController : MonoBehaviour {
         UpdateText();
     }
 
+    //Gör så att tiden tickar nedåt. När tiden = 0 stannar den där. 
+    //Medan den tickar uppdateras texten som visar återstående tid.
+    //Kallar på increaseGravity() 
     void FixedUpdate()
     {
         timeLeft -= Time.deltaTime;
@@ -71,7 +76,8 @@ public class GameController : MonoBehaviour {
             Instantiate(dog, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(Random.Range(1.0f, 1.0f));
         }
-        //När spelet är slut visas gameover-texten och restart-knappen
+        //När spelet är slut visas gameover-text, restart-knapp, highscore-knapp och quit-knapp.
+        //Anropar AddScore-metoden från klassen Score för att kunna lägga in resultatet i highscorelistan. 
         yield return new WaitForSeconds(2.0f);
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(1.0f);
