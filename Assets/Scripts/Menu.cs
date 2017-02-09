@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Restart : MonoBehaviour {
+public class Menu : MonoBehaviour
+{
     //Metod som är kopplad till restart-knappen. Laddar om Main-scenen.
-    public void RestartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void showHighscore()
+    {
+        SceneManager.LoadScene("Highscore");
     }
 }

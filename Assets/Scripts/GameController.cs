@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
     public GameObject gameOverText;
     public GameObject restartButton;
     public GameObject quitGameButton;
+    public GameObject highscoreButton;
     public GameObject nameInput;
 
     private float maxWidth;
@@ -75,8 +76,15 @@ public class GameController : MonoBehaviour {
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         restartButton.SetActive(true);
+        highscoreButton.SetActive(true);
         quitGameButton.SetActive(true);
-        nameInput.SetActive(true);
+        Score s = new Score();
+        Debug.Log(Score.score);
+        Debug.Log(Score.playername);
+        string ingameName = Score.playername;
+        Debug.Log("HÄR ÄR NAMNET:" + ingameName);
+        s.AddScore(Score.score, ingameName);
+        
     }
 
     //Funktion som uppdaterar hur mycket tid som återstår 

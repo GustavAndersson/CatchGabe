@@ -8,11 +8,12 @@ public class Score : MonoBehaviour {
     public Text scoreText;
     public int gabeValue;
 
-    private int score;
-    private string playername;
+    public static int score;
+    public static string playername;
 
 	//Vid start har score värdet 0 från början
-	void Start () {
+	void Start () 
+    {
         score = 0;
         UpdateScore();
     }
@@ -34,15 +35,15 @@ public class Score : MonoBehaviour {
     }
 
     //Metod som uppdaterar poängen
-    void UpdateScore()
+    public void UpdateScore()
     {
         scoreText.text = "Score\n" + score;
-        AddScore(score, playername);
     }
-
+    
     //Kollar igenom om poängen platsar i topplistan
-    void AddScore(int score, string name)
+    public void AddScore(int score, string name)
     {
+        Debug.Log(playername);
         int newScore;
         string newName;
         int oldScore;
@@ -74,10 +75,10 @@ public class Score : MonoBehaviour {
         }
     }  
 
-    void getNameInput(string name)
+    public void getNameInput(string name)
     {
         playername = name;
-        Debug.Log(playername);
-        UpdateScore();
+        Debug.Log("namn innan:" + playername);
     }
+    
 }
